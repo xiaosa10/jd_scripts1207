@@ -1,5 +1,6 @@
 /*
 金榜年终奖
+脚本会给内置的码进行助力
 活动时间：2020-12-12日结束
 活动入口：京东APP首页右边浮动飘窗
 已支持IOS双京东账号,Node.js支持N个京东账号
@@ -37,7 +38,7 @@ if ($.isNode()) {
   cookiesArr.push(...[$.getdata('CookieJD'), $.getdata('CookieJD2')]);
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-$.newShareCodes = [`P04z54XCjVUnIaW5mtaQj-mijYVy8k`, 'P04z54XCjVUnIaW5jQNCmXw3HVPnJH96E8', 'P04z54XCjVUnIaW5m9cZ2Wt3X1OkOxua5q0fK8', 'P04z54XCjVUnIaW5m9cZ2Xwjn4fwX5b6UuwCKI'];
+$.newShareCodes = [`P04z54XCjVUnIaW5uyqp7ZUcKXAOg`, 'P04z54XCjVUnIaW5m9cZ2b-3SlCljaXKdEAGfE', 'P04z54XCjVUnIaW5m9cZyWfoD8x4GJze7jH-w', 'P04z54XCjVUnIaW5uC_sbVPZKnpNxkV0Mv6XQ', 'P04z54XCjVUnIaW5jQAD2Px3XtJlI-B19s', 'P04z54XCjVUnIaW5m9cZ2b5iSlNxK3f-rsXNlY'];
 !(async () => {
   if (!cookiesArr[0]) {
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/', {"open-url": "https://bean.m.jd.com/"});
