@@ -63,9 +63,13 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
         }
         continue
       }
-      let nowTs = new Date().getTime() + new Date().getTimezoneOffset() * 60 * 1000 + 8 * 60 * 60 * 1000
-      let nowTts = new Date().getTime()
-       console.log(nowTs, $.startTime, $.endTime,nowTts)
+      let nowTs = new Date().getTime() //+ new Date().getTimezoneOffset() * 60 * 1000 + 8 * 60 * 60 * 1000
+       console.log(nowTs, $.startTime, $.endTime)
+      if ($.startTime > nowTs) {
+        await $.wait($.startTime-nowTs+10000);
+        console.log(`太早了，等一等`)
+        let nowTs = new Date().getTime()
+      }
       if ($.startTime <= nowTs && nowTs < $.endTime) {
         await receiveRedRain();
       } else {
