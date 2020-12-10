@@ -38,7 +38,7 @@ if ($.isNode()) {
   cookiesArr.push(...[$.getdata('CookieJD'), $.getdata('CookieJD2')]);
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-$.newShareCodes = [`P04z54XCjVUnIaW5uyqp7ZUcKXAOg`, 'P04z54XCjVUnIaW5m9cZ2b-3SlCljaXKdEAGfE', 'P04z54XCjVUnIaW5m9cZyWfoD8x4GJze7jH-w', 'P04z54XCjVUnIaW5uC_sbVPZKnpNxkV0Mv6XQ', 'P04z54XCjVUnIaW5jQAD2Px3XtJlI-B19s', 'P04z54XCjVUnIaW5m9cZ2b5iSlNxK3f-rsXNlY'];
+$.newShareCodes = ['P04z54XCjVUnIaW5uyqp7ZUcKXAOg@P04z54XCjVUnIaW5m9cZ2b-3SlCljaXKdEAGfE@P04z54XCjVUnIaW5m9cZyWfoD8x4GJze7jH-w@P04z54XCjVUnIaW5uC_sbVPZKnpNxkV0Mv6XQ@P04z54XCjVUnIaW5jQAD2Px3XtJlI-B19s@P04z54XCjVUnIaW5m9cZ2b5iSlNxK3f-rsXNlY@P04z54XCjVUnIaW5nJcdhaLlSET0n0kmz386w'];
 !(async () => {
   if (!cookiesArr[0]) {
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/', {"open-url": "https://bean.m.jd.com/"});
