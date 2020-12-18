@@ -34,10 +34,15 @@ if ($.isNode()) {
   })
   if (process.env.JD_DEBUG && process.env.JD_DEBUG === 'false') console.log = () => {};
 } else {
-  cookiesArr.push(...[$.getdata('CookieJD'), $.getdata('CookieJD2')]);
+  let cookiesData = $.getdata('CookiesJD') || "[]";
+  cookiesData = jsonParse(cookiesData);
+  cookiesArr = cookiesData.map(item => item.cookie);
+  cookiesArr.reverse();
+  cookiesArr.push(...[$.getdata('CookieJD2'), $.getdata('CookieJD')]);
+  cookiesArr.reverse();
 }
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-const inviteCodes = ['P04z54XCjVUnoaW5uyqp7ZUcKXAOg@P04z54XCjVUnoaW5m9cZ2b-3SlCltnQk_5NpnQ@P04z54XCjVUnoaW5m9cZyWfoD8x4KmA1oIIFA@P04z54XCjVUnoaW5uC_sbVPZKnpNzRIcphoWA@P04z54XCjVUnoaW5jQAD2Px3XtJlAWaIi8@P04z54XCjVUnoaW5m9cZ2b5iSlNxHRajjOdJp8@P04z54XCjVUnoaW5m9cZ2X82i5KkO2y3LCln7Q'];
+const inviteCodes = ['P04z54XCjVUnoaW5uyqp7ZUcKXAOg@P04z54XCjVUnoaW5m9cZ2b-3SlCltnQk_5NpnQ@P04z54XCjVUnoaW5m9cZyWfoD8x4KmA1oIIFA@P04z54XCjVUnoaW5uC_sbVPZKnpNzRIcphoWA@P04z54XCjVUnoaW5jQAD2Px3XtJlAWaIi8@P04z54XCjVUnoaW5m9cZ2b5iSlNxHRajjOdJp8@P04z54XCjVUnoaW5m9cZ2X82i5KkO2y3LCln7Q@P04z54XCjVUnoaW5m9cZ2eq3iobkQ60SsVcy1Q'];
 !(async () => {
   await requireConfig();
   if (!cookiesArr[0]) {
@@ -380,6 +385,17 @@ function safeGet(data) {
     console.log(e);
     console.log(`京东服务器访问数据为空，请检查自身设备网络情况`);
     return false;
+  }
+}
+function jsonParse(str) {
+  if (typeof str == "string") {
+    try {
+      return JSON.parse(str);
+    } catch (e) {
+      console.log(e);
+      $.msg($.name, '', '请勿随意在BoxJs输入框修改内容\n建议通过脚本去获取cookie')
+      return [];
+    }
   }
 }
 // prettier-ignore
