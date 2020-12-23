@@ -34,7 +34,7 @@ const randomCount = $.isNode() ? 20 : 5;
 const tuanActiveId = `6S9y4sJUfA2vPQP6TLdVIQ==`;
 const jxOpenUrl = `openjd://virtual?params=%7B%20%22category%22:%20%22jump%22,%20%22des%22:%20%22m%22,%20%22url%22:%20%22https://wqsd.jd.com/pingou/dream_factory/index.html%22%20%7D`;
 let cookiesArr = [], cookie = '', message = '';
-const inviteCodes = ['05tfe7_atmkggWus12BPbQ==@LDB0ch60vFA5g5dDUkH9hA==@Qw52BPIv6c_mchV7vruxzA==@y4nKp0iB1WZZ_jAE10cttw==@R3RhRk4tNdw1gi3_9Pn6LQ==@oITNgDJvBecBpsx3zv3b-A==@NeuVHXg0vw8-QRJS6fmL7A==@_BDKVoB5GwiWpDGS-XmjGw==@HUJ2O_0p_vfKmdtrd1PH6A==@ywJR3XfRtJKSZEO3L-AGQw==@rPtEhirgGvPefl2POGU2ww==@3GPLY9X60q0IiuNNjNdZ5Q==@NeuVHXg0vw8-QRJS6fmL7A==@_BDKVoB5GwiWpDGS-XmjGw==@HUJ2O_0p_vfKmdtrd1PH6A==@ywJR3XfRtJKSZEO3L-AGQw=='];
+const inviteCodes = ['V5LkjP4WRyjeCKR9VRwcRX0bBuTz7MEK0-E99EJ7u0k=', 'PDPM257r_KuQhil2Y7koNw==', "gB99tYLjvPcEFloDgamoBw==", '-OvElMzqeyeGBWazWYjI1Q==', 'GFwo6PntxDHH95ZRzZ5uAg=='];
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
@@ -547,7 +547,7 @@ function userInfo() {
                 }
                 console.log(`当前电力：${data.user.electric}`)
                 console.log(`当前等级：${data.user.currentLevel}`)
-                console.log(`分享码: ${data.user.encryptPin}`);
+                console.log(`\n【京东账号${$.index}（${$.nickName || $.UserName}）的${$.name}好友互助码】${data.user.encryptPin}`);
                 console.log(`已投入电力：${production.investedElectric}`);
                 console.log(`所需电力：${production.needElectric}`);
                 console.log(`生产进度：${((production.investedElectric / production.needElectric) * 100).toFixed(2)}%`);
